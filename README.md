@@ -7,7 +7,17 @@ An application that analyzes ERC20 tokens on a Base chain (or any EVM chain with
 - Estimates buy and sell tax for ERC20 tokens (Base Chain)
 - Basic honeypot detection
 
-## Requirements
+## Pre-requisites
+
+- VS Code or any Code Editor
+- Node.js installed on your machine
+- npm package manager
+
+## Technology Stack
+
+- Web3.js
+- Typescript
+- Tailwind CSS
 
 ## Getting Started
 
@@ -31,3 +41,15 @@ An application that analyzes ERC20 tokens on a Base chain (or any EVM chain with
 - ### Example
 
 - ### Response
+
+## Deployment
+
+You can deploy this repo to a production server using a platform like Vercel, Netlify, Heroku or any of your choice.
+
+## Contributing
+
+Feel free to fork the repository and submit pull requests with your improvements or bug fixes. We welcome contributions from the community!
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
