@@ -16,6 +16,7 @@ An application that analyzes ERC20 tokens on a Base chain (or any EVM chain with
 ## Technology Stack
 
 - Web3.js
+- Nextjs
 - Typescript
 - Tailwind CSS
 
