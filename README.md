@@ -12,6 +12,7 @@ An application that analyzes ERC20 tokens on a Base chain (or any EVM chain with
 - VS Code or any Code Editor
 - Node.js installed on your machine
 - npm package manager
+- RPC URL
 
 ## Technology Stack
 
