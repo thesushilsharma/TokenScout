@@ -5,7 +5,8 @@ An application that analyzes ERC20 tokens on a Base chain (or any EVM chain with
 ## Features
 
 - Estimates buy and sell tax for ERC20 tokens (Base Chain)
-- Basic honeypot detection
+- Basic honeypot detection (Spam token)
+- **[Moralis Integration](https://docs.moralis.io/web3-data-api/evm/reference/wallet-api/get-token-balances-by-wallet):** Utilizes the Moralis API for comprehensive blockchain data.
 
 ## Pre-requisites
 
@@ -38,11 +39,19 @@ An application that analyzes ERC20 tokens on a Base chain (or any EVM chain with
 
 ## Configuration
 
+Add your Moralis API key
+
 ## Usage
 
 - ### Example
+  
+  - Enter Wallet Address: Input the Ethereum wallet address you want to analyze.
+  - Click "Submit": Token Scout will fetch and analyze the tokens in the wallet.
+  - View Results: See a list of tokens with clear indicators of potential spam (SPAM 👎 or NO SPAM 👍).
 
 - ### Response
+  
+  - API Request: A request is made to the ```api/gettokens?address=``` endpoint with the address and chain as parameters.
 
 ## Deployment
 
@@ -50,7 +59,7 @@ You can deploy this repo to a production server using a platform like Vercel, Ne
 
 ## Contributing
 
-Feel free to fork the repository and submit pull requests with your improvements or bug fixes. We welcome contributions from the community!
+You can fix the repository and submit pull requests with improvements or bug fixes. We welcome contributions from the community!
 
 ## License
 
