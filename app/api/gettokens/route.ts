@@ -1,4 +1,4 @@
-import { NextResponse } from 'next/server';
+import { NextRequest, NextResponse } from 'next/server'; 
 import Moralis from 'moralis';
 import { EvmChain } from '@moralisweb3/common-evm-utils';
 
@@ -16,7 +16,7 @@ async function getWalletTokenBalances(address: string) {
 }
 
 // GET handler 
-export async function GET(req: Response) {
+export async function GET(req: NextRequest) {
   const url = new URL(req.url);
   const params = new URLSearchParams(url.search);
   let address = params.get("address");
