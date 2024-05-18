@@ -1,6 +1,7 @@
-import { HoneypotIsV1 } from "@normalizex/honeypot-is";
-import promptSync from "prompt-sync";
-const prompt = promptSync({ sigint: true }); // Initialize promptSync
+const { HoneypotIsV1 } = require("@normalizex/honeypot-is");
+const { promptSync } = require("prompt-sync");
+
+let init = promptSync({ sigint: true }); // Initialize promptSync
 
 const CHAIN_ID = 56; // Replace with the desired chain ID
 
@@ -18,14 +19,22 @@ async function scanToken(tokenAddress: string) {
 
     const isHoneypot = scanResult.IsHoneypot;
     const message = isHoneypot
-      ? 'Warning: Potential honeypot detected!'
-      : 'The token appears to be safe based on this scan.';
+      ? "Warning: Potential honeypot detected!"
+      : "The token appears to be safe based on this scan.";
 
     console.log(message);
+
+    return { isHoneypot, message }; // Return result object
   } catch (error) {
-    console.error('Error during scan:', error);
+    console.error("Error during scan:", error);
+    throw error; // Or return a more specific error object
   }
 }
 
-const tokenToScan = prompt('Enter the token address to scan:');
-scanToken(tokenToScan);
+const tokenToScan = prompt("Enter the token address to scan:");
+// Null Check and Handling:
+if (tokenToScan) {
+  scanToken(tokenToScan);
+} else {
+  console.log("No token address provided.");
+}
