@@ -51,7 +51,8 @@ Add your Moralis API key
 
 - ### Response
   
-  - API Request: A request is made to the ```api/gettokens?address=``` endpoint with the address and chain as parameters.
+  - A request is made to the ```/api/gettokens?address=``` endpoint with the wallet address.
+  - The API route ```/api/honeypot?tokenAddress=``` expects a token address
 
 ## Deployment
 
