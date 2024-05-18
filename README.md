@@ -57,6 +57,12 @@ Add your Moralis API key
 
 You can deploy this repo to a production server using a platform like Vercel, Netlify, Heroku or any of your choice.
 
+## Future Enhancements
+
+- **Honeypot Detection:** Implement advanced algorithms to identify honeypot tokens that trap investors' funds.
+- **Rug Pull Risk Assessment:** Evaluate the risk of a project being a rug pull based on factors like liquidity, ownership, and contract analysis.
+- **Token Contract Analysis:** Integrate tools to scan token contracts for potential vulnerabilities or malicious code.
+
 ## Contributing
 
 You can fix the repository and submit pull requests with improvements or bug fixes. We welcome contributions from the community!
