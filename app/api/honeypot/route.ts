@@ -1,8 +1,10 @@
-const { HoneypotIsV1 } =require("@normalizex/honeypot-is")
+import { HoneypotIsV1 } from "@normalizex/honeypot-is";
+import promptSync from "prompt-sync";
+const prompt = promptSync({ sigint: true }); // Initialize promptSync
 
-const CHAIN_ID = 56;
+const CHAIN_ID = 56; // Replace with the desired chain ID
 
-async function scanToken(tokenAddress) {
+async function scanToken(tokenAddress: string) {
   try {
     const honeypotis = new HoneypotIsV1();
 
@@ -24,6 +26,6 @@ async function scanToken(tokenAddress) {
     console.error('Error during scan:', error);
   }
 }
-const promptSync = require('prompt-sync')({ sigint: true });
-const tokenToScan = promptSync('Enter the token address to scan:');
+
+const tokenToScan = prompt('Enter the token address to scan:');
 scanToken(tokenToScan);
