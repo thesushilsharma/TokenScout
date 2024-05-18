@@ -1,14 +1,12 @@
-const { HoneypotIsV1 } = require("@normalizex/honeypot-is");
-const { promptSync } = require("prompt-sync");
+import { HoneypotIsV1 } from "@normalizex/honeypot-is";
+import promptSync from "prompt-sync";
 
-let init = promptSync({ sigint: true }); // Initialize promptSync
-
+const prompt = promptSync({ sigint: true });
 const CHAIN_ID = 56; // Replace with the desired chain ID
 
-async function scanToken(tokenAddress: string) {
+async function scanToken(tokenAddress: string): Promise<{ isHoneypot: boolean, message: string }> {
   try {
     const honeypotis = new HoneypotIsV1();
-
     const pairs = await honeypotis.getPairs(tokenAddress, CHAIN_ID);
     const scanResult = await honeypotis.honeypotScan(
       tokenAddress,
@@ -23,18 +21,22 @@ async function scanToken(tokenAddress: string) {
       : "The token appears to be safe based on this scan.";
 
     console.log(message);
-
-    return { isHoneypot, message }; // Return result object
+    return { isHoneypot, message };
   } catch (error) {
     console.error("Error during scan:", error);
-    throw error; // Or return a more specific error object
+    throw new Error("Token scan failed"); // Throw a specific error
   }
 }
 
-const tokenToScan = prompt("Enter the token address to scan:");
-// Null Check and Handling:
+const tokenToScan = prompt("Enter the token address to scan: ");
 if (tokenToScan) {
-  scanToken(tokenToScan);
+  scanToken(tokenToScan)
+    .then(result => {
+      // Optionally handle the scan result further
+    })
+    .catch(error => {
+      console.error("Error handling scan result:", error);
+    });
 } else {
   console.log("No token address provided.");
 }
