@@ -45,8 +45,9 @@ export default function Main() {
     return (
         <section className="p-4 md:p-6">  {/* More padding on larger screens */}
             <form className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4 mb-4" onSubmit={handleSubmit}>
+                <label htmlFor="inputField" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your Wallet Address</label>
                 <input
-                    className="text-black border border-gray-300 p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 w-full md:w-auto"
+                    className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="0xcB1C1FdE09f811B294172696404e88E658659905"
                     type="text"
                     id="inputField"
                     name="inputField"
