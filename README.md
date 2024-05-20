@@ -6,7 +6,11 @@ An application that analyzes ERC20 tokens on a Base chain (or any EVM chain with
 
 - Estimates buy and sell tax for ERC20 tokens (Base Chain)
 - Basic honeypot detection (Spam token)
-- **[Moralis Integration](https://docs.moralis.io/web3-data-api/evm/reference/wallet-api/get-token-balances-by-wallet):** Utilizes the Moralis API for comprehensive blockchain data.
+- **[Moralis Integration](https://moralis.io/):** Utilizes the Moralis API for comprehensive blockchain data.
+  - Get ERC20 token metadata by contract
+  - Get ERC20 token metadata by symbols
+  - Get ERC20 token balance by wallet
+  - Get ERC20 Token Balances with Prices by Wallet
 
 ## Pre-requisites
 
